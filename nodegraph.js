@@ -112,7 +112,9 @@ function buttonClicked() {
 function bfsStep() {
   var adjacentNodescopy = [];
   for (node of adjacentNodes) {
-    checkEnd(node)
+    if(checkEnd(node) == true){
+      break;
+    }
     setNodetoVisited(node);
     visitedNodes.push(node);
     adjacentNodescopy.push(node);
@@ -157,5 +159,6 @@ function checkEnd(Node) {
     Node.color = "Yellow";
     EndisFound = true;
     console.log(Node);
+    return true;
   }
 }
