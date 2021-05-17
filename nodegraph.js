@@ -9,10 +9,10 @@ const ctx = canvas.getContext("2d");
 
 const gridHeight = 10;
 const gridWidth = 10;
-var Start = null;
-var End = null;
-var adjacentNodes = [];
-var EndisFound = false;
+let Start = null;
+let End = null;
+let adjacentNodes = [];
+let EndisFound = false;
 
 class Node {
   constructor(x, y) {
@@ -41,7 +41,7 @@ class Node {
   }
 }
 
-var gridCords = [];
+let gridCords = [];
 
 for (let i = 0; i < gridHeight; i++) {
   for (let j = 0; j < gridWidth; j++) {
@@ -56,11 +56,11 @@ function gameFrame() {
 }
 
 function collides(gridCord, x, y) {
-  var isCollision = false;
-  for (var i =0, len = gridCord.length; i < len; i++) {
-    var left = gridCord[i].x * gridCord[i].width,
+  let isCollision = false;
+  for (let i =0, len = gridCord.length; i < len; i++) {
+    let left = gridCord[i].x * gridCord[i].width,
       right = gridCord[i].x * gridCord[i].width + gridCord[i].width;
-    var top = gridCord[i].y * gridCord[i].height,
+    let top = gridCord[i].y * gridCord[i].height,
       bottom = gridCord[i].y * gridCord[i].height + gridCord[i].height;
     if (left + right >= x && left <= x && top + bottom >= y && top <= y) {
       isCollision = gridCord[i];
@@ -72,7 +72,7 @@ function collides(gridCord, x, y) {
 canvas.addEventListener(
   "click",
   function (e) {
-    var rect = collides(gridCords, e.offsetX, e.offsetY);
+    let rect = collides(gridCords, e.offsetX, e.offsetY);
     if (rect) {
       console.log(rect);
       if (!End) {
@@ -95,7 +95,7 @@ canvas.addEventListener(
   },
   false
 );
-var visitedNodes = [];
+let visitedNodes = [];
 function buttonClicked() {
   if (Start && End) {
     {
@@ -110,7 +110,7 @@ function buttonClicked() {
 }
 
 function bfsStep() {
-  var adjacentNodescopy = [];
+  let adjacentNodescopy = [];
   for (node of adjacentNodes) {
     if(checkEnd(node) == true){
       break;
