@@ -127,24 +127,24 @@ function bfsStep() {
 }
 
 function getAdjacentNodes(Node) {
-  if (gridCords[Node.ucode]) {
-    if (gridCords[Node.ucode].isVisited == false) {
-      adjacentNodes.push(gridCords[Node.ucode]);
+  if (gridCords[parseInt(Node.ucode)]) {
+    if (gridCords[parseInt(Node.ucode)].isVisited == false) {
+      adjacentNodes.push(gridCords[parseInt(Node.ucode)]);
     }
   }
-  if (gridCords[Node.dcode]) {
-    if (gridCords[Node.dcode].isVisited == false) {
-      adjacentNodes.push(gridCords[Node.dcode]);
+  if (gridCords[parseInt(Node.dcode)]) {
+    if (gridCords[parseInt(Node.dcode)].isVisited == false) {
+      adjacentNodes.push(gridCords[parseInt(Node.dcode)]);
     }
   }
-  if (gridCords[Node.lcode]) {
-    if (gridCords[Node.lcode].isVisited == false) {
-      adjacentNodes.push(gridCords[Node.lcode]);
+  if (gridCords[parseInt(Node.lcode)]) {
+    if (gridCords[parseInt(Node.lcode)].isVisited == false) {
+      adjacentNodes.push(gridCords[parseInt(Node.lcode)]);
     }
   }
-  if (gridCords[Node.rcode]) {
-    if (gridCords[Node.rcode].isVisited == false) {
-      adjacentNodes.push(gridCords[Node.rcode]);
+  if (gridCords[parseInt(Node.rcode)]) {
+    if (gridCords[parseInt(Node.rcode)].isVisited == false) {
+      adjacentNodes.push(gridCords[parseInt(Node.rcode)]);
     }
   }
 }
